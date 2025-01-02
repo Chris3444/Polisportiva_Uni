@@ -1,14 +1,16 @@
 package it.unife.ip.model;
 
+import java.util.ArrayList;
+
 public class Atleta {
     private String nome;
     private String cognome;
     private String dataNascita;
     private int numeroTelefono;
     private String email;
-    private Attivita_Sp attivita;
+    private ArrayList<Attivita_Sp> attivita;
 
-    public Atleta(String nome, String cognome, String dataNascita, int numeroTelefono, String email, Attivita_Sp attivita) {
+    public Atleta(String nome, String cognome, String dataNascita, int numeroTelefono, String email, ArrayList<Attivita_Sp> attivita) {
         this.nome = nome;
         this.cognome = cognome;
         this.dataNascita = dataNascita;
@@ -46,10 +48,10 @@ public class Atleta {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Attivita_Sp getAttivita() {
+    public ArrayList<Attivita_Sp> getAttivita() {
         return attivita;
     }
-    public void setAttivita(Attivita_Sp attivita) {
+    public void setAttivita(ArrayList<Attivita_Sp> attivita) {
         this.attivita = attivita;
     }
     

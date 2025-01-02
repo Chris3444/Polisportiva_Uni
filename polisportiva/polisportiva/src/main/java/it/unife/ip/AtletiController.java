@@ -3,7 +3,7 @@ package it.unife.ip;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class SecondaryController {
+public class AtletiController {
 
     @FXML
     private void switchToPrimary() throws IOException {

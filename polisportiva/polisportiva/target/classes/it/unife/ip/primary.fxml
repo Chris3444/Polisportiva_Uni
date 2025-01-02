@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unife.ip.PrimaryController">
-   <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.PrimaryController">
+    <!-- Define Rows and Columns -->
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50" />
+        <ColumnConstraints percentWidth="50" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="50" />
+        <RowConstraints percentHeight="50" />
+    </rowConstraints>
+
+    <!-- Add Buttons in the Corners -->
+      <StackPane GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER">
+        <Button fx:id="atleti" text="Atleti" onAction="#switchToAtleti" style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
+    </StackPane>
+    
+    <!-- Top Right Button -->
+    <StackPane GridPane.rowIndex="0" GridPane.columnIndex="1" alignment="CENTER">
+        <Button fx:id="topRight" text="Attività Sportive" style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
+    </StackPane>
+
+    <!-- Bottom Left Button -->
+    <StackPane GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="CENTER">
+        <Button fx:id="bottomLeft" text="Iscrizione" style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
+    </StackPane>
+    
+    <!-- Bottom Right Button -->
+    <StackPane GridPane.rowIndex="1" GridPane.columnIndex="1" alignment="CENTER">
+        <Button fx:id="bottomRight" text="Statistiche" style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
+    </StackPane>
+</GridPane>
