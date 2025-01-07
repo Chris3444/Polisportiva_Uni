@@ -1,9 +1,11 @@
 package it.unife.ip;
 
 import java.io.IOException;
+import javafx.util.*;
 import java.util.Random;
 
 import it.unife.ip.view.AtletiView;
+import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,7 +33,23 @@ public class PrimaryController {
         bottomLeft.setStyle(bottomLeft.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
     
         bottomRight.setStyle(bottomRight.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
+        addRotateOnHover(atleti);
+        addRotateOnHover(topRight);
+        addRotateOnHover(bottomLeft);
+        addRotateOnHover(bottomRight);
+
     }
+
+    private void addRotateOnHover(Button button) {
+        RotateTransition spin = new RotateTransition(Duration.millis(100), button); // 100ms for fast rotation
+        spin.setByAngle(360); // Full spin (360 degrees)
+        spin.setCycleCount(RotateTransition.INDEFINITE); // Infinite spinning
+
+        // Start spinning on mouse hover
+        button.setOnMouseEntered(event -> spin.play());
+        // Stop spinning when the mouse exits
+        button.setOnMouseExited(event -> spin.stop());
+}
 
     // Method to generate a random color in hex format
     private String getRandomColorHex() {
@@ -45,6 +63,7 @@ public class PrimaryController {
             (int)(randomColor.getGreen() * 255), 
             (int)(randomColor.getBlue() * 255));
     }
+    /* 
      @FXML
     private void switchToAtleti() {
         // Create the new view (AtletiView) and switch the scene
@@ -54,4 +73,6 @@ public class PrimaryController {
         stage.setScene(atletiScene);  // Set the new scene
         stage.show();  // Show the stage with the new scene
     }
+    */ 
+    
 }

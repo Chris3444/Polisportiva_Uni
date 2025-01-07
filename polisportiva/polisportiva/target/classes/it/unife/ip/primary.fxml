@@ -19,7 +19,7 @@
 
     <!-- Add Buttons in the Corners -->
       <StackPane GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER">
-        <Button fx:id="atleti" text="Atleti" onAction="#switchToAtleti" style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
+        <Button fx:id="atleti" text="Atleti"  style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
     </StackPane>
     
     <!-- Top Right Button -->
