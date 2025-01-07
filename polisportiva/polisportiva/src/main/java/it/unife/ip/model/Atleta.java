@@ -6,14 +6,16 @@ public class Atleta {
     private String nome;
     private String cognome;
     private String dataNascita;
+    private String indirizzo;
     private int numeroTelefono;
     private String email;
     private ArrayList<Attivita_Sp> attivita;
 
-    public Atleta(String nome, String cognome, String dataNascita, int numeroTelefono, String email, ArrayList<Attivita_Sp> attivita) {
+    public Atleta(String nome, String cognome, String dataNascita, String indirizzo, int numeroTelefono, String email, ArrayList<Attivita_Sp> attivita) {
         this.nome = nome;
         this.cognome = cognome;
         this.dataNascita = dataNascita;
+        this.indirizzo = indirizzo;
         this.numeroTelefono = numeroTelefono;
         this.email = email;
         this.attivita = attivita;
@@ -35,6 +37,12 @@ public class Atleta {
     }
     public void setDataNascita(String dataNascita) {
         this.dataNascita = dataNascita;
+    }
+    public String getIndirizzo() {
+        return indirizzo;
+    }
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
     }
     public int getNumeroTelefono() {
         return numeroTelefono;
@@ -61,6 +69,7 @@ public class Atleta {
                 "nome='" + nome + '\'' +
                 ", cognome='" + cognome + '\'' +
                 ", dataNascita='" + dataNascita + '\'' +
+                ", indirizzo='" + indirizzo + '\'' +
                 ", numeroTelefono=" + numeroTelefono +
                 ", email='" + email + '\'' +
                 ", attivita=" + attivita +

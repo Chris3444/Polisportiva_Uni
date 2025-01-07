@@ -6,7 +6,8 @@ module it.unife.ip {
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.annotation;
-
+    
+    opens it.unife.ip.model to com.fasterxml.jackson.databind;
     opens it.unife.ip to javafx.fxml;
     exports it.unife.ip;
 }
