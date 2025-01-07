@@ -36,6 +36,14 @@ public class Attivita_Sp {
     public void setGiorni(String giorni) {
         this.giorni = giorni;
     }
-    
+    @Override
+    public String toString() {
+        return "Attivita_Sp{" +
+                "nome='" + nome + '\'' +
+                ", descrizione='" + descrizione + '\'' +
+                ", orari='" + orari + '\'' +
+                ", giorni='" + giorni + '\'' +
+                '}';
+    }
     
 }

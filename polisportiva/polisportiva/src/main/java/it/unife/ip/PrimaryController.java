@@ -21,7 +21,7 @@ public class PrimaryController {
     @FXML
     private Button topRight; // Button at top-right
     @FXML
-    private Button bottomLeft; // Button at bottom-left
+    private Button iscrizione; // Button at bottom-left
     @FXML
     private Button bottomRight; // Button at bottom-right
 
@@ -30,12 +30,12 @@ public class PrimaryController {
         // Apply random colors to all buttons
         atleti.setStyle(atleti.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
         topRight.setStyle(topRight.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
-        bottomLeft.setStyle(bottomLeft.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
+        iscrizione.setStyle(iscrizione.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
     
         bottomRight.setStyle(bottomRight.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
         addRotateOnHover(atleti);
         addRotateOnHover(topRight);
-        addRotateOnHover(bottomLeft);
+        addRotateOnHover(iscrizione);
         addRotateOnHover(bottomRight);
 
     }
@@ -63,16 +63,13 @@ public class PrimaryController {
             (int)(randomColor.getGreen() * 255), 
             (int)(randomColor.getBlue() * 255));
     }
-    /* 
-     @FXML
-    private void switchToAtleti() {
-        // Create the new view (AtletiView) and switch the scene
-        AtletiView atletiView = new AtletiView();
-        Scene atletiScene = new Scene((Parent) atletiView.getRoot(), 800, 600);  // Create a scene with AtletiView as the root
-        Stage stage = (Stage) atleti.getScene().getWindow();  // Get the current stage
-        stage.setScene(atletiScene);  // Set the new scene
-        stage.show();  // Show the stage with the new scene
+    @FXML
+    private void switchToAtleti() throws IOException {
+        App.setRoot("atleti");
+    } 
+    @FXML
+    private void switchToIscrizione() throws IOException {
+        App.setRoot("iscrizione");
     }
-    */ 
     
 }

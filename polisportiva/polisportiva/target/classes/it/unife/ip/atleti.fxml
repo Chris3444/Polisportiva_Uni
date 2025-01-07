@@ -15,8 +15,8 @@
     </top>
 
     <!-- Center content -->
-    
-        <TableView fx:id="atletiTable" prefWidth="600" prefHeight="400">
+    <!-- Table with athletes 
+     <TableView fx:id="atletiTable" prefWidth="600" prefHeight="400">
             <columns>
                 <TableColumn text="nome" fx:id="nome" cellValueFactory="new PropertyValueFactory('nome')" />
                 <TableColumn text="cognome" fx:id="cognome" />
@@ -25,4 +25,7 @@
                 <TableColumn text="email" fx:id="email" />
                 <TableColumn text="Attività sportiva" fx:id="sportColumn" />
             </columns>
+    
+    -->
+       
 </BorderPane>

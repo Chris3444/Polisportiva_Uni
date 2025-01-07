@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.IscrizioneController">
+    <!-- Title bar with Home button -->
+    <top>
+        
+        <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: lightgray;">
+            <Button text="Home" onAction="#switchToPrimary" />
+        </HBox>
+    </top>
+
+    <GridPane alignment="CENTER" >
+        
+    </GridPane>
+
+    
+</BorderPane>

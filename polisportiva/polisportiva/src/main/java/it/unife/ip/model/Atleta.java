@@ -54,5 +54,17 @@ public class Atleta {
     public void setAttivita(ArrayList<Attivita_Sp> attivita) {
         this.attivita = attivita;
     }
+
+    @Override
+    public String toString() {
+        return "Atleta{" +
+                "nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", dataNascita='" + dataNascita + '\'' +
+                ", numeroTelefono=" + numeroTelefono +
+                ", email='" + email + '\'' +
+                ", attivita=" + attivita +
+                '}';
+    }
     
 }
