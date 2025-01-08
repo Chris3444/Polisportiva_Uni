@@ -4,15 +4,12 @@ import java.io.IOException;
 import javafx.util.*;
 import java.util.Random;
 
-import it.unife.ip.view.AtletiView;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
+
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
+
 
 public class PrimaryController {
 

@@ -7,15 +7,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import static it.unife.ip.util.JsonUtil.appendToJson;
-import static it.unife.ip.util.JsonUtil.saveToJson;
-
 import it.unife.ip.model.Atleta;
 import it.unife.ip.model.Attivita_Sp;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 public class IscrizioneController {
     
@@ -79,6 +76,12 @@ public class IscrizioneController {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        System.out.println(atleta);
+        try{
+            App.setRoot("primary");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        
+        
     }
 }
