@@ -10,7 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class AtletiFormController {
+public class AttivitaSpFormController {
     @FXML
     private TextField nameField;
 
@@ -40,6 +40,11 @@ public class AtletiFormController {
         try {
             appendToJson(file, attivita, Attivita_Sp.class);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            App.setRoot("attivita_sp");
         } catch (Exception e) {
             e.printStackTrace();
         }

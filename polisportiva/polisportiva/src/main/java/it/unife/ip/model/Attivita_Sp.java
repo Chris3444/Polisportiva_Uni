@@ -5,12 +5,14 @@ public class Attivita_Sp {
     private String descrizione;
     private String orari;
     private String giorni;
-
+    
     public Attivita_Sp(String nome, String descrizione, String orari, String giorni) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.orari = orari;
         this.giorni = giorni;
+    }
+    public Attivita_Sp() {
     }
     public String getNome() {
         return nome;

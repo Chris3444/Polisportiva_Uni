@@ -16,7 +16,7 @@ public class PrimaryController {
     @FXML
     private Button atleti;   // Button at top-left
     @FXML
-    private Button topRight; // Button at top-right
+    private Button attivitaSp; // Button at top-right
     @FXML
     private Button iscrizione; // Button at bottom-left
     @FXML
@@ -26,12 +26,12 @@ public class PrimaryController {
     public void initialize() {
         // Apply random colors to all buttons
         atleti.setStyle(atleti.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
-        topRight.setStyle(topRight.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
+        attivitaSp.setStyle(attivitaSp.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
         iscrizione.setStyle(iscrizione.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
     
         bottomRight.setStyle(bottomRight.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
         addRotateOnHover(atleti);
-        addRotateOnHover(topRight);
+        addRotateOnHover(attivitaSp);
         addRotateOnHover(iscrizione);
         addRotateOnHover(bottomRight);
 
@@ -67,6 +67,11 @@ public class PrimaryController {
     @FXML
     private void switchToIscrizione() throws IOException {
         App.setRoot("iscrizione");
+    }
+
+    @FXML
+    private void switchToAttivitaSp() throws IOException {
+        App.setRoot("attivita_Sp");
     }
     
 }

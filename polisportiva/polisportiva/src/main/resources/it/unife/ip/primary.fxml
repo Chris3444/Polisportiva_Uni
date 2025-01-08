@@ -24,7 +24,7 @@
     
     <!-- Top Right Button -->
     <StackPane GridPane.rowIndex="0" GridPane.columnIndex="1" alignment="CENTER">
-        <Button fx:id="topRight" text="Attività Sportive" style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
+        <Button fx:id="attivitaSp" text="Attività Sportive" onAction="#switchToAttivitaSp" style="-fx-pref-width: 100; -fx-pref-height: 50; -fx-background-radius: 20; -fx-text-fill: white;" />
     </StackPane>
 
     <!-- Bottom Left Button -->

@@ -2,6 +2,11 @@ package it.unife.ip.util;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,8 +18,17 @@ public class JsonUtil {
     public static <T> void saveToJson(File file, T data) throws IOException {
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, data);
     }
-    public static <T> T readFromJson(File file, Class<T> clazz) throws IOException {
-        return objectMapper.readValue(file, clazz);
+    public static <T> ObservableList<T> readFromJson(File file, Class<T> clazz) throws IOException {
+        if (file.exists() && file.length() > 0) {
+            CollectionType listType = objectMapper.getTypeFactory().constructCollectionType(List.class, clazz);
+            List<T> tempList = objectMapper.readValue(file, listType);
+            ObservableList<T> list = FXCollections.observableArrayList(tempList);
+            return list;
+            
+        }
+        else {
+            return FXCollections.observableArrayList();
+        }
     }
     public static <T> void appendToJson(File file, T object, Class<T> clazz) throws IOException {
         List<T> existingData;
@@ -38,5 +52,16 @@ public class JsonUtil {
 
         // Write the updated list back to the file
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, existingData);
+    }
+
+     // Save the modified data to the JSON file
+     public static <T> void saveToJson(ObservableList<T> object, File file) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            // Write the updated data to the JSON file
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, object.toArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

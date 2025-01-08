@@ -4,7 +4,7 @@
 <?import javafx.scene.text.*?>
 
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.IscrizioneController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.AttivitaSpFormController">
     <!-- Title bar with Home button -->
     <top>
         
@@ -27,7 +27,7 @@
             <Label text="giorni:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
             <TextField fx:id="daysField" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2" />
 
-            <Button text="Iscriviti" onAction="#iscrivi" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="100"/>
+            <Button text="Aggiungi" onAction="#iscrivi" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="100"/>
         
         </GridPane>
     

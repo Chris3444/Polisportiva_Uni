@@ -2,8 +2,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.IscrizioneController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.AttivitaSpController">
     <!-- Title bar with Home button -->
     <top>
         
@@ -13,8 +14,52 @@
     </top>
 
     <center>
+        <TableView fx:id="tableView" >
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name"  >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nome"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="descriptionColumn" text="Descrizione" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="descrizione"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="hoursColumn" text="Orari" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="orari"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="daysColumn" text="Giorni" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="giorni"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="deleteColumn" text="Action" />
+            </columns>
+        </TableView>
+        
             
-
     </center>
+    <bottom>
+        <GridPane>
+            <Button text="Aggiungi" onAction="#add" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button text="Salva" onAction="#modify" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        </GridPane>
+            
+    </bottom>
 
 </BorderPane>
