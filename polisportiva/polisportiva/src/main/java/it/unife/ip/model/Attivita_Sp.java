@@ -47,5 +47,13 @@ public class Attivita_Sp {
                 ", giorni='" + giorni + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Attivita_Sp that = (Attivita_Sp) o;
+        return nome.equals(that.nome) && descrizione.equals(that.descrizione) && orari.equals(that.orari) && giorni.equals(that.giorni);
+    }
     
 }

@@ -4,7 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.IscrizioneController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.AtletaFormController">
     <!-- Title bar with Home button -->
     <top>
         

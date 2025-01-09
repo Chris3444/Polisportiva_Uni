@@ -7,14 +7,17 @@ import java.util.Arrays;
 import java.util.List;
 
 import static it.unife.ip.util.JsonUtil.appendToJson;
+import static it.unife.ip.util.JsonUtil.readFromJson;
+
 import it.unife.ip.model.Atleta;
 import it.unife.ip.model.Attivita_Sp;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
 
-public class IscrizioneController {
+public class AtletaFormController {
     
     @FXML
     private TextField nameField;
@@ -47,12 +50,42 @@ public class IscrizioneController {
     @FXML
     private void initialize() {
         // Create a list of countries to populate the ComboBox
-        List<Attivita_Sp> attivita = Arrays.asList(
-                new Attivita_Sp("Calcio", "Descrizione Calcio", "Orari Calcio", "Giorni Calcio")
-        );
+        List<Attivita_Sp> attivita;
+        try {
+            File file = new File("C:\\Users\\user\\Documents\\uni\\triennale\\2. anno\\Linguaggi di programmazione\\Polisportiva_Uni\\polisportiva\\polisportiva\\src\\main\\resources\\it\\unife\\ip\\json\\attivita_sportive.json");
+            attivita = readFromJson(file, Attivita_Sp.class);
+        } catch (Exception e) {
+            attivita = new ArrayList<Attivita_Sp>();
+            e.printStackTrace();
+        }
+        activityField.getItems().addAll(attivita);
+
 
         // Set the items in the ComboBox
-        activityField.getItems().addAll(attivita);
+        activityField.setCellFactory(param -> new ListCell<Attivita_Sp>() {
+            @Override
+            protected void updateItem(Attivita_Sp item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.getNome()); // assuming Attivita_Sp has a getName() method
+                }
+            }
+        });
+
+        // If you want to display only the name when the user selects an item
+        activityField.setButtonCell(new ListCell<Attivita_Sp>() {
+            @Override
+            protected void updateItem(Attivita_Sp item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.getNome()); // again, assuming Attivita_Sp has a getName() method
+                }
+            }
+        });
     }
 
     @FXML
@@ -77,7 +110,7 @@ public class IscrizioneController {
             e.printStackTrace();
         }
         try{
-            App.setRoot("primary");
+            App.setRoot("atleti");
         }catch(IOException e){
             e.printStackTrace();
         }

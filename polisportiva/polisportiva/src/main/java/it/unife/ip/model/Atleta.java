@@ -20,6 +20,15 @@ public class Atleta {
         this.email = email;
         this.attivita = attivita;
     }
+    public Atleta() {
+        this.nome = "";
+        this.cognome = "";
+        this.dataNascita = "";
+        this.indirizzo = "";
+        this.numeroTelefono = 0;
+        this.email = "";
+        this.attivita = new ArrayList<>();
+    }
     public String getNome() {
         return nome;
     }
@@ -74,6 +83,13 @@ public class Atleta {
                 ", email='" + email + '\'' +
                 ", attivita=" + attivita +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Atleta atleta = (Atleta) o;
+        return numeroTelefono == atleta.numeroTelefono && nome.equals(atleta.nome) && cognome.equals(atleta.cognome) && dataNascita.equals(atleta.dataNascita) && indirizzo.equals(atleta.indirizzo) && email.equals(atleta.email) && attivita.equals(atleta.attivita);
     }
     
 }

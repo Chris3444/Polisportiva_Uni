@@ -12,16 +12,16 @@
     "giorni" : "Giorni Calcio"
   } ]
 }, {
-  "nome" : "sadsad",
-  "cognome" : "sadsa",
-  "dataNascita" : "2025-01-11",
-  "indirizzo" : "assad",
-  "numeroTelefono" : 34234234,
-  "email" : "ddfsdfs",
+  "nome" : "Christian",
+  "cognome" : "Mick",
+  "dataNascita" : "2012-01-11",
+  "indirizzo" : "aaaaaaaaaaa",
+  "numeroTelefono" : 33333333,
+  "email" : "chssa",
   "attivita" : [ {
-    "nome" : "Calcio",
-    "descrizione" : "Descrizione Calcio",
-    "orari" : "Orari Calcio",
-    "giorni" : "Giorni Calcio"
+    "nome" : "sadsad",
+    "descrizione" : "sadsa",
+    "orari" : "9-19",
+    "giorni" : "Venerdi-Sabato"
   } ]
 } ]

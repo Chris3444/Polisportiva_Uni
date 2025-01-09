@@ -1,5 +1,6 @@
 package it.unife.ip;
 
+import static it.unife.ip.util.JsonUtil.deleteFromJson;
 import static it.unife.ip.util.JsonUtil.readFromJson;
 import static it.unife.ip.util.JsonUtil.saveToJson;
 
@@ -91,6 +92,7 @@ public class AttivitaSpController {
             Attivita_Sp attivitaSp = event.getRowValue();
             attivitaSp.setDescrizione(event.getNewValue());
         });
+        addButton(file);
 
     }
 
@@ -112,7 +114,7 @@ public class AttivitaSpController {
         App.setRoot("attivitaSpForm");
     }
 
-    private void addButton(){
+    private void addButton(File file){
         Callback<TableColumn<Attivita_Sp, Void>,TableCell<Attivita_Sp, Void>> cellFactory = new Callback<TableColumn<Attivita_Sp, Void>,TableCell<Attivita_Sp, Void>>() {
             @Override
             public TableCell<Attivita_Sp,Void> call(final TableColumn<Attivita_Sp,Void> param){
@@ -120,8 +122,16 @@ public class AttivitaSpController {
                     private final Button btn = new Button("Delete");
                     {
                         btn.setOnAction((ActionEvent event) -> {
-                            Attivita_Sp attivitaSp = getTableView().getItems().get(getIndex());
-                            getTableView().getItems().remove(attivitaSp);
+                            
+                            try {
+                                Attivita_Sp attivitaSp = getTableView().getItems().get(getIndex());
+                                deleteFromJson(file, attivitaSp, Attivita_Sp.class);
+                                getTableView().getItems().remove(attivitaSp);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            
                         });
                     }
                     @Override
@@ -142,7 +152,7 @@ public class AttivitaSpController {
         };
 
         deleteColumn.setCellFactory(cellFactory);
-        tableView.getColumns().add(deleteColumn);
+        
     }
 
 }

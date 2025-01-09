@@ -1,31 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="it.unife.ip.AtletiController">
     <!-- Title bar with Home button -->
     <top>
+        
         <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: lightgray;">
             <Button text="Home" onAction="#switchToPrimary" />
         </HBox>
     </top>
 
-    <!-- Center content -->
-    <!-- Table with athletes 
-     <TableView fx:id="atletiTable" prefWidth="600" prefHeight="400">
+    <center>
+        <TableView fx:id="atletiTable" >
             <columns>
-                <TableColumn text="nome" fx:id="nome" cellValueFactory="new PropertyValueFactory('nome')" />
-                <TableColumn text="cognome" fx:id="cognome" />
-                <TableColumn text="dataNascita" fx:id="dataNascita" />
-                <TableColumn text="numeroTelefono" fx:id="numeroTelefono" />
-                <TableColumn text="email" fx:id="email" />
-                <TableColumn text="Attività sportiva" fx:id="sportColumn" />
+                <TableColumn fx:id="nameColumn" text="Name"  >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nome"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="lastNameColumn" text="Cognome" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cognome"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="dateColumn" text="Data di Nascita" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dataNascita"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="adressColumn" text="Indirizzo" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="indirizzo"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="phoneColumn" text="Numero di telefono" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numeroTelefono"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="emailColumn" text="Email" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="email"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="adressColumn" text="Indirizzo" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="indirizzo"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                    <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="deleteColumn" text="Action" />
             </columns>
+        </TableView>
+    </center>
+    <bottom>
     
-    -->
-       
+    <GridPane>
+        <Button text="Aggiungi" onAction="#add" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button text="Salva" onAction="#modify" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    </GridPane>
+    
+    
+        
+            
+    </bottom>
+
 </BorderPane>

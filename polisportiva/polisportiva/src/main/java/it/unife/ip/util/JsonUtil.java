@@ -64,4 +64,25 @@ public class JsonUtil {
             e.printStackTrace();
         }
     }
+
+    public static <T> boolean deleteFromJson(File file, T object, Class<T> clazz ) throws IOException {
+        if (file.exists() && file.length() > 0) {
+            // Read the existing data from the JSON file
+            CollectionType listType = objectMapper.getTypeFactory().constructCollectionType(List.class, clazz);
+            List<T> tempList = objectMapper.readValue(file, listType);
+            // Check if the index is within bounds
+            if (tempList.contains(object)) {
+                // Remove the object at the specified index
+                tempList.remove(object);
+                // Write the updated list back to the file
+                objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, tempList);
+    
+                return true; // Deletion successful
+            } else {
+                return false; // No object
+            }
+        } else {
+            return false; // File does not exist or is empty
+        }
+    }
 }
