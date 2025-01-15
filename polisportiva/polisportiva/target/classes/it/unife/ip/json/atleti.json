@@ -24,4 +24,24 @@
     "orari" : "9-19",
     "giorni" : "Venerdi-Sabato"
   } ]
+}, {
+  "nome" : "COso",
+  "cognome" : "dsfdsd",
+  "dataNascita" : "2024-04-09",
+  "indirizzo" : "ewr",
+  "numeroTelefono" : 232111,
+  "email" : "adsaasd@sds.com",
+  "attivita" : [ {
+    "nome" : "sadsad",
+    "descrizione" : "sadsa",
+    "orari" : "9-19",
+    "giorni" : "Venerdi-Sabato",
+    "selected" : true
+  }, {
+    "nome" : "dsfds",
+    "descrizione" : "dddoooo",
+    "orari" : "9-12",
+    "giorni" : "Venerdi-Domenica",
+    "selected" : true
+  } ]
 } ]

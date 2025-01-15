@@ -53,6 +53,8 @@ public class AtletiController {
 
     @FXML
     private TableColumn<Atleta, String> adressColumn;
+    @FXML
+    private TableColumn<Atleta, ObservableList<String>> activityColumn;
 
     @FXML
     private TableColumn<Atleta, Void> deleteColumn;
@@ -61,6 +63,7 @@ public class AtletiController {
     private void initialize() {
         atletiTable.setEditable(true);
         ObservableList<Atleta> atleti;
+        ObservableList<Attivita_Sp> attivita;
         File file = new File("C:\\Users\\user\\Documents\\uni\\triennale\\2. anno\\Linguaggi di programmazione\\Polisportiva_Uni\\polisportiva\\polisportiva\\src\\main\\resources\\it\\unife\\ip\\json\\atleti.json");
         try {
             atleti = readFromJson(file, Atleta.class);

@@ -72,6 +72,7 @@
                     <TextFieldTableCell fx:factory="forTableColumn" />
                     </cellFactory>
                 </TableColumn>
+                <TableColumn text="Activities" fx:id="activityColumn" />
                 <TableColumn fx:id="deleteColumn" text="Action" />
             </columns>
         </TableView>

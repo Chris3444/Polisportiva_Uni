@@ -1,18 +1,24 @@
 package it.unife.ip.model;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+
 public class Attivita_Sp {
     private String nome;
     private String descrizione;
     private String orari;
     private String giorni;
+    private BooleanProperty selected;
     
     public Attivita_Sp(String nome, String descrizione, String orari, String giorni) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.orari = orari;
         this.giorni = giorni;
+        this.selected = new SimpleBooleanProperty(false);
     }
     public Attivita_Sp() {
+        this.selected = new SimpleBooleanProperty(false);
     }
     public String getNome() {
         return nome;
@@ -38,6 +44,19 @@ public class Attivita_Sp {
     public void setGiorni(String giorni) {
         this.giorni = giorni;
     }
+
+    public BooleanProperty selectedProperty() {
+        return selected;
+    }
+
+    public boolean isSelected() {
+        return selected.get();
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected.set(selected);
+    }
+
     @Override
     public String toString() {
         return "Attivita_Sp{" +

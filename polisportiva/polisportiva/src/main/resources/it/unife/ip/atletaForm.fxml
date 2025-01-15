@@ -37,7 +37,7 @@
             <TextField fx:id="emailField" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
 
             <Label text="Attività preferite:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-            <ComboBox fx:id="activityField" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="2" prefWidth="200"/>
+            <ListView fx:id="activityField" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="2" prefWidth="200"/>
 
             <Button text="Iscriviti" onAction="#iscrivi" GridPane.rowIndex="7" GridPane.columnIndex="1" prefWidth="100"/>
         

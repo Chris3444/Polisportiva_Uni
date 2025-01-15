@@ -10,6 +10,7 @@ public class Atleta {
     private int numeroTelefono;
     private String email;
     private ArrayList<Attivita_Sp> attivita;
+    
 
     public Atleta(String nome, String cognome, String dataNascita, String indirizzo, int numeroTelefono, String email, ArrayList<Attivita_Sp> attivita) {
         this.nome = nome;
