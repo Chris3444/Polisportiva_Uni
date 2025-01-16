@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import it.unife.ip.model.Attivita_Sp;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class AttivitaSpFormController {

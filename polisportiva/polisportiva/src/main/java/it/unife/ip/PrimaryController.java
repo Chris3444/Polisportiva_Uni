@@ -20,7 +20,7 @@ public class PrimaryController {
     @FXML
     private Button iscrizione; // Button at bottom-left
     @FXML
-    private Button bottomRight; // Button at bottom-right
+    private Button statistica; // Button at bottom-right
 
     @FXML
     public void initialize() {
@@ -29,11 +29,11 @@ public class PrimaryController {
         attivitaSp.setStyle(attivitaSp.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
         iscrizione.setStyle(iscrizione.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
     
-        bottomRight.setStyle(bottomRight.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
+        statistica.setStyle(statistica.getStyle() + "-fx-background-color: " + getRandomColorHex() + ";");
         addRotateOnHover(atleti);
         addRotateOnHover(attivitaSp);
         addRotateOnHover(iscrizione);
-        addRotateOnHover(bottomRight);
+        addRotateOnHover(statistica);
 
     }
 
@@ -72,6 +72,10 @@ public class PrimaryController {
     @FXML
     private void switchToAttivitaSp() throws IOException {
         App.setRoot("attivita_Sp");
+    }
+    @FXML
+    private void switchToStatistica() throws IOException{
+        App.setRoot("statistica");
     }
     
 }

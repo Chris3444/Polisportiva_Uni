@@ -3,21 +3,17 @@ package it.unife.ip;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 import static it.unife.ip.util.JsonUtil.appendToJson;
 import static it.unife.ip.util.JsonUtil.readFromJson;
 
 import it.unife.ip.model.Atleta;
 import it.unife.ip.model.Attivita_Sp;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxListCell;
@@ -132,7 +128,6 @@ public class AtletaFormController {
         try {
             appendToJson(file, atleta , Atleta.class);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         try{

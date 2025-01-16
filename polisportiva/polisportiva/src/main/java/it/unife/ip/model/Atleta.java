@@ -1,6 +1,7 @@
 package it.unife.ip.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Atleta {
     private String nome;
@@ -29,6 +30,26 @@ public class Atleta {
         this.numeroTelefono = 0;
         this.email = "";
         this.attivita = new ArrayList<>();
+    }
+    public Atleta(Atleta a, ArrayList<Attivita_Sp> attivita) {
+        this.nome = a.getNome();
+        this.cognome = a.getCognome();
+        this.dataNascita = a.getDataNascita();
+        this.indirizzo = a.getIndirizzo();
+        this.numeroTelefono = a.getNumeroTelefono();
+        this.email = a.getEmail();
+        List<Attivita_Sp> toRemove = new ArrayList<>();
+        for(Attivita_Sp at : a.attivita){
+            for( Attivita_Sp i : attivita){
+                if(at.equals(i)){
+                    toRemove.add(i);
+                }
+            }
+        }
+        attivita.removeAll(toRemove);
+        a.attivita.addAll(attivita);
+        this.attivita = a.attivita;
+
     }
     public String getNome() {
         return nome;

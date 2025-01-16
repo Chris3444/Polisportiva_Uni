@@ -9,7 +9,20 @@
     "nome" : "Calcio",
     "descrizione" : "Descrizione Calcio",
     "orari" : "Orari Calcio",
-    "giorni" : "Giorni Calcio"
+    "giorni" : "Giorni Calcio",
+    "selected" : false
+  }, {
+    "nome" : "sadsad",
+    "descrizione" : "sadsa",
+    "orari" : "9-19",
+    "giorni" : "Venerdi-Sabato",
+    "selected" : true
+  }, {
+    "nome" : "dsfds",
+    "descrizione" : "dddoooo",
+    "orari" : "9-12",
+    "giorni" : "Venerdi-Domenica",
+    "selected" : true
   } ]
 }, {
   "nome" : "Christian",
@@ -22,7 +35,14 @@
     "nome" : "sadsad",
     "descrizione" : "sadsa",
     "orari" : "9-19",
-    "giorni" : "Venerdi-Sabato"
+    "giorni" : "Venerdi-Sabato",
+    "selected" : false
+  }, {
+    "nome" : "dsfds",
+    "descrizione" : "dddoooo",
+    "orari" : "9-12",
+    "giorni" : "Venerdi-Domenica",
+    "selected" : true
   } ]
 }, {
   "nome" : "COso",

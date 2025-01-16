@@ -1,31 +1,26 @@
 package it.unife.ip;
 
 import javafx.application.Platform;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.text.Text;
-import javafx.stage.*;
 import javafx.util.Callback;
-import javafx.util.StringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import it.unife.ip.model.Atleta;
 import it.unife.ip.model.Attivita_Sp;
-import it.unife.ip.util.*;
 import static it.unife.ip.util.JsonUtil.deleteFromJson;
 import static it.unife.ip.util.JsonUtil.readFromJson;
 import static it.unife.ip.util.JsonUtil.saveToJson;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
 
 public class AtletiController {
 
@@ -63,7 +58,6 @@ public class AtletiController {
     private void initialize() {
         atletiTable.setEditable(true);
         ObservableList<Atleta> atleti;
-        ObservableList<Attivita_Sp> attivita;
         File file = new File("C:\\Users\\user\\Documents\\uni\\triennale\\2. anno\\Linguaggi di programmazione\\Polisportiva_Uni\\polisportiva\\polisportiva\\src\\main\\resources\\it\\unife\\ip\\json\\atleti.json");
         try {
             atleti = readFromJson(file, Atleta.class);
@@ -78,18 +72,26 @@ public class AtletiController {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         adressColumn.setCellValueFactory(new PropertyValueFactory<>("indirizzo"));
         phoneColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        activityColumn.setCellValueFactory(cellData -> {
+            ObservableList<String> activities = FXCollections.observableArrayList();
+            for (Attivita_Sp activity : cellData.getValue().getAttivita()) {
+                activities.add(activity.getNome());
+            }
+            return new SimpleObjectProperty<>(activities);
+        });
         atletiTable.setItems(atleti);
 
         Platform.runLater( () -> {
             double width = atletiTable.getWidth();
-            double percent = 0.125;
+            double percent = 0.112;
             double newWidth = width * percent;
             nameColumn.setPrefWidth(newWidth);
             lastNameColumn.setPrefWidth(newWidth);
             dateColumn.setPrefWidth(newWidth);
             phoneColumn.setPrefWidth(newWidth);
             emailColumn.setPrefWidth(newWidth);
-            adressColumn.setPrefWidth(newWidth);                
+            adressColumn.setPrefWidth(newWidth);
+            activityColumn.setPrefWidth(newWidth);                
         });
 
         nameColumn.setOnEditCommit(event -> {
@@ -116,6 +118,7 @@ public class AtletiController {
             Atleta atleta = event.getRowValue();
             atleta.setIndirizzo(event.getNewValue());
         });
+
         addButton(file);
 
     }    
@@ -128,7 +131,7 @@ public class AtletiController {
             File file = new File("C:\\Users\\user\\Documents\\uni\\triennale\\2. anno\\Linguaggi di programmazione\\Polisportiva_Uni\\polisportiva\\polisportiva\\src\\main\\resources\\it\\unife\\ip\\json\\atleti.json");
             saveToJson(atleta, file);
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
         System.out.println("Data saved to JSON.");
     }
