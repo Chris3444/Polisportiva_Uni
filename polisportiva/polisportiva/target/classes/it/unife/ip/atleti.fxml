@@ -64,14 +64,7 @@
                     <TextFieldTableCell fx:factory="forTableColumn" />
                     </cellFactory>
                 </TableColumn>
-                <TableColumn fx:id="adressColumn" text="Indirizzo" >
-                    <cellValueFactory>
-                        <PropertyValueFactory property="indirizzo"/>
-                    </cellValueFactory>
-                    <cellFactory>
-                    <TextFieldTableCell fx:factory="forTableColumn" />
-                    </cellFactory>
-                </TableColumn>
+               
                 <TableColumn text="Activities" fx:id="activityColumn" />
                 <TableColumn fx:id="deleteColumn" text="Action" />
             </columns>

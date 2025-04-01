@@ -11,9 +11,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.Callback;
-import javafx.util.converter.IntegerStringConverter;
 import it.unife.ip.model.Atleta;
 import it.unife.ip.model.Attivita_Sp;
 import static it.unife.ip.util.JsonUtil.deleteFromJson;
@@ -41,7 +39,7 @@ public class AtletiController {
     private TableColumn<Atleta, String> dateColumn;
 
     @FXML
-    private TableColumn<Atleta, Integer> phoneColumn;
+    private TableColumn<Atleta, String> phoneColumn;
 
     @FXML
     private TableColumn<Atleta, String> emailColumn;
@@ -71,7 +69,6 @@ public class AtletiController {
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("numeroTelefono"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         adressColumn.setCellValueFactory(new PropertyValueFactory<>("indirizzo"));
-        phoneColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         activityColumn.setCellValueFactory(cellData -> {
             ObservableList<String> activities = FXCollections.observableArrayList();
             for (Attivita_Sp activity : cellData.getValue().getAttivita()) {
@@ -83,7 +80,7 @@ public class AtletiController {
 
         Platform.runLater( () -> {
             double width = atletiTable.getWidth();
-            double percent = 0.112;
+            double percent = 0.1225;
             double newWidth = width * percent;
             nameColumn.setPrefWidth(newWidth);
             lastNameColumn.setPrefWidth(newWidth);
@@ -126,7 +123,6 @@ public class AtletiController {
     @FXML
     public void modify(){
         ObservableList<Atleta> atleta = atletiTable.getItems();
-        atleta.forEach(at -> System.out.println("Saving Person: " + at));
         try {
             File file = new File("C:\\Users\\user\\Documents\\uni\\triennale\\2. anno\\Linguaggi di programmazione\\Polisportiva_Uni\\polisportiva\\polisportiva\\src\\main\\resources\\it\\unife\\ip\\json\\atleti.json");
             saveToJson(atleta, file);

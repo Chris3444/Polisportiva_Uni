@@ -95,7 +95,6 @@ public class AttivitaSpController {
     @FXML
     public void modify(){
         ObservableList<Attivita_Sp> attivita = tableView.getItems();
-        attivita.forEach(at -> System.out.println("Saving Person: " + at));
         try {
             File file = new File("C:\\Users\\user\\Documents\\uni\\triennale\\2. anno\\Linguaggi di programmazione\\Polisportiva_Uni\\polisportiva\\polisportiva\\src\\main\\resources\\it\\unife\\ip\\json\\attivita_sportive.json");
             saveToJson(attivita, file);

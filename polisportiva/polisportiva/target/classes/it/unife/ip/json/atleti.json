@@ -2,9 +2,9 @@
   "nome" : "sadsad",
   "cognome" : "sadsa",
   "dataNascita" : "2025-01-11",
-  "indirizzo" : "assad",
-  "numeroTelefono" : 34234234,
-  "email" : "ddfsdfs",
+  "indirizzo" : "assadff",
+  "numeroTelefono" : "34234234",
+  "email" : "ddfsdfs@sudo.com",
   "attivita" : [ {
     "nome" : "Calcio",
     "descrizione" : "Descrizione Calcio",
@@ -28,9 +28,9 @@
   "nome" : "Christian",
   "cognome" : "Mick",
   "dataNascita" : "2012-01-11",
-  "indirizzo" : "aaaaaaaaaaa",
-  "numeroTelefono" : 33333333,
-  "email" : "chssa",
+  "indirizzo" : "Via andreotti",
+  "numeroTelefono" : "33333333",
+  "email" : "chssa@gmail.com",
   "attivita" : [ {
     "nome" : "sadsad",
     "descrizione" : "sadsa",
@@ -43,25 +43,59 @@
     "orari" : "9-12",
     "giorni" : "Venerdi-Domenica",
     "selected" : true
+  }, {
+    "nome" : "sadsad",
+    "descrizione" : "sadsa",
+    "orari" : "9-18",
+    "giorni" : "Venerdi-Sabato",
+    "selected" : true
   } ]
 }, {
-  "nome" : "COso",
-  "cognome" : "dsfdsd",
-  "dataNascita" : "2024-04-09",
-  "indirizzo" : "ewr",
-  "numeroTelefono" : 232111,
-  "email" : "adsaasd@sds.com",
+  "nome" : "Dominik",
+  "cognome" : "Aufschneider",
+  "dataNascita" : "2006-12-27",
+  "indirizzo" : "Via Fogelweide",
+  "numeroTelefono" : "380456979",
+  "email" : "dominik@gmail.com",
+  "attivita" : [ {
+    "nome" : "Kayak",
+    "descrizione" : "Andare a kayak",
+    "orari" : "9-12",
+    "giorni" : "Mon/Thursday",
+    "selected" : true
+  } ]
+}, {
+  "nome" : "Laraib",
+  "cognome" : "Ahmed",
+  "dataNascita" : "2003-11-22",
+  "indirizzo" : "Europaalle",
+  "numeroTelefono" : "3455500221",
+  "email" : "laraib.ahmed@gmail.com",
+  "attivita" : [ {
+    "nome" : "Kayak",
+    "descrizione" : "Andare a kayak",
+    "orari" : "9-12",
+    "giorni" : "Mon/Thursday",
+    "selected" : true
+  } ]
+}, {
+  "nome" : "Laraib",
+  "cognome" : "ss",
+  "dataNascita" : "2024-11-13",
+  "indirizzo" : "asasas",
+  "numeroTelefono" : "334566",
+  "email" : "chria@mai.com",
   "attivita" : [ {
     "nome" : "sadsad",
     "descrizione" : "sadsa",
-    "orari" : "9-19",
+    "orari" : "9-18",
     "giorni" : "Venerdi-Sabato",
     "selected" : true
   }, {
-    "nome" : "dsfds",
-    "descrizione" : "dddoooo",
+    "nome" : "Kayak",
+    "descrizione" : "Andare a kayak",
     "orari" : "9-12",
-    "giorni" : "Venerdi-Domenica",
+    "giorni" : "Mon/Thursday",
     "selected" : true
   } ]
 } ]

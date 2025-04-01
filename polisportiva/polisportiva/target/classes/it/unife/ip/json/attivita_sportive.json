@@ -1,11 +1,19 @@
 [ {
   "nome" : "sadsad",
   "descrizione" : "sadsa",
-  "orari" : "9-19",
-  "giorni" : "Venerdi-Sabato"
+  "orari" : "9-18",
+  "giorni" : "Venerdi-Sabato",
+  "selected" : false
 }, {
   "nome" : "dsfds",
   "descrizione" : "dddoooo",
+  "orari" : "9-19",
+  "giorni" : "Venerdi-Domenica",
+  "selected" : false
+}, {
+  "nome" : "Kayak",
+  "descrizione" : "Andare a kayak",
   "orari" : "9-12",
-  "giorni" : "Venerdi-Domenica"
+  "giorni" : "Mon/Thursday",
+  "selected" : false
 } ]

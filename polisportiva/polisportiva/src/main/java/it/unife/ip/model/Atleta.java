@@ -8,12 +8,12 @@ public class Atleta {
     private String cognome;
     private String dataNascita;
     private String indirizzo;
-    private int numeroTelefono;
+    private String numeroTelefono;
     private String email;
     private ArrayList<Attivita_Sp> attivita;
     
 
-    public Atleta(String nome, String cognome, String dataNascita, String indirizzo, int numeroTelefono, String email, ArrayList<Attivita_Sp> attivita) {
+    public Atleta(String nome, String cognome, String dataNascita, String indirizzo, String numeroTelefono, String email, ArrayList<Attivita_Sp> attivita) {
         this.nome = nome;
         this.cognome = cognome;
         this.dataNascita = dataNascita;
@@ -27,7 +27,7 @@ public class Atleta {
         this.cognome = "";
         this.dataNascita = "";
         this.indirizzo = "";
-        this.numeroTelefono = 0;
+        this.numeroTelefono = "";
         this.email = "";
         this.attivita = new ArrayList<>();
     }
@@ -75,10 +75,10 @@ public class Atleta {
     public void setIndirizzo(String indirizzo) {
         this.indirizzo = indirizzo;
     }
-    public int getNumeroTelefono() {
+    public String getNumeroTelefono() {
         return numeroTelefono;
     }
-    public void setNumeroTelefono(int numeroTelefono) {
+    public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
     public String getEmail() {

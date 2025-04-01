@@ -110,7 +110,7 @@ public class AtletaFormController {
         String name = nameField.getText();
         String lastName = lastNameField.getText();
         String date = datePicker.getValue().toString();
-        int phone = Integer.parseInt(phoneField.getText());
+        String phone = phoneField.getText();
         String adress = adressField.getText();
         String email = emailField.getText();
          // Retrieve the selected Country 
